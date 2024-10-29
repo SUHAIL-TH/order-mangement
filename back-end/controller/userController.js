@@ -144,7 +144,8 @@ const purchaseList=async(req,res)=>{
           "item.itemName": 1, // Include item name
           "item.category":1,
           "item.brand":1,
-          "item.unitPrice":1
+          "item.unitPrice":1,
+          "item.stockUnit":1
         }
       }
     ];

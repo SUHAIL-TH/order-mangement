@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import dayjs from 'dayjs';
-import { supplierList, itemList ,purchaseOrder} from '../utils/axios';
+import { supplierList, itemList, purchaseOrder } from '../utils/axios';
 import { toast } from 'react-toastify';
 
 const PurchaseOrder = () => {
   const [suppliers, setSupplier] = useState([]);
   const [item, setItemlist] = useState([]);
-  
+
   // Fetch suppliers and items from the API
   useEffect(() => {
     const fetchData = async () => {
@@ -38,29 +38,29 @@ const PurchaseOrder = () => {
 
   const validationSchema = Yup.object({
     supplierName: Yup.string().required('Supplier Name is required'),
-    itemId:Yup.string().required('Item is required')
+    itemId: Yup.string().required('Item is required')
   });
 
 
-  const handleSubmit = async(values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     console.log("Submitted Data:", values);
 
 
-    let data=await purchaseOrder(values)
-    console.log(data  )
+    let data = await purchaseOrder(values)
     console.log(data)
-    if(data.data.status){
+    console.log(data)
+    if (data.data.status) {
       toast.success(`Success: ${data.data.message}`);
       resetForm({
         values: {
           ...initialValues,
-          orderNo: `PO-${Math.floor(Math.random() * 100000000)}`, 
+          orderNo: `PO-${Math.floor(Math.random() * 100000000)}`,
         },
       });
-    }else{
+    } else {
       toast.success(`Error: ${data.data.message}`);
     }
-    
+
   };
 
   return (
@@ -125,7 +125,7 @@ const PurchaseOrder = () => {
                   onChange={(e) => {
                     const selectedItem = item.find(item => item._id === e.target.value);
                     const itemTotal = selectedItem ? selectedItem.unitPrice : 0;
-                    setFieldValue("itemId", e.target.value); 
+                    setFieldValue("itemId", e.target.value);
                     setFieldValue("total", itemTotal);
                     setFieldValue("netAmount", itemTotal - values.discount); // Update netAmount based on itemTotal
                   }}
@@ -159,12 +159,13 @@ const PurchaseOrder = () => {
                 name="discount"
                 className="mt-1 p-3 border border-gray-300 rounded-md w-full bg-gray-50"
                 onChange={(e) => {
-                  const discount = parseFloat(e.target.value) || 0;
+                  let discount = parseFloat(e.target.value) || 0;
+                  if (discount < 0) discount = 0; // Prevent negative values
                   setFieldValue("discount", discount);
                   setFieldValue("netAmount", values.total - discount); // Update netAmount based on discount
                 }}
               />
-            </div>
+            </div>  
 
             {/* Net Amount */}
             <div>
