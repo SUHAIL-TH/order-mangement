@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* styles.css */
+
+.input-error {
+    border: 2px solid red; /* This will set the border to red */
+}
+
+.error {
+    color: red;
+    font-size: 0.875rem; /* Optional: Adjust the size as needed */
+    margin-top: 0.25rem; /* Optional: Add space between the input and error message */
+}
+    
