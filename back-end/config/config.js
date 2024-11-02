@@ -1,10 +1,23 @@
-const mongoose=require("mongoose")
-module.exports={
-    dbconnect:()=>{
-        mongoose.connect("mongodb://0.0.0.0:27017/ecom").then(()=>{
-            console.log("mongodb is connected   ")
-        }).catch((error)=>{
-            console.log(error)
+
+
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+
+dotenv.config();
+
+module.exports = {
+    dbconnect: () => {
+      
+        mongoose.connect(process.env.Mongo_url, {
+            useNewUrlParser: true, 
+            useUnifiedTopology: true 
         })
+        .then(() => {
+            console.log("MongoDB is connected");
+        })
+        .catch((error) => {
+            console.error("MongoDB connection error:", error);
+        });
     }
-}
+};

@@ -14,10 +14,17 @@ dbconnect.dbconnect()
 
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// app.use(cors({
+//     credentials:true,
+//     origin:'*'
+// }))
 app.use(cors({
-    credentials:true,
-    origin:'http://localhost:5173'
-}))
+    origin: (origin, callback) => {
+        callback(null, true);  // Allow all origins
+    },
+    credentials: true
+}));
+
 app.use("/public",express.static("public"))  
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
