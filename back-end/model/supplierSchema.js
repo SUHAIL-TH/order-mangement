@@ -43,7 +43,6 @@ const supplierSchema = new mongoose.Schema({
   timestamps: true, 
 });
 
-// Create a Supplier model
 const Supplier = mongoose.model('Supplier', supplierSchema);
 
 module.exports = Supplier;

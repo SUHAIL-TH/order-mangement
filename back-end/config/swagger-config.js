@@ -3,15 +3,15 @@ const swaggerUi = require('swagger-ui-express');
 
 // Swagger definition
 const swaggerDefinition = {
-  openapi: '3.0.0', // OpenAPI version
+  openapi: '3.0.0', 
   info: {
-    title: 'User Management API', // API title
-    version: '1.0.0', // API version
-    description: 'API for managing users', // API description
+    title: 'User Management API', 
+    version: '1.0.0', 
+    description: 'API for managing users', 
   },
   servers: [
     {
-      url: 'http://localhost:4000/', // Server URL
+      url: 'http://localhost:4000/', 
     },
   ],
   components: {
@@ -25,18 +25,18 @@ const swaggerDefinition = {
   },
   security: [
     {
-      BearerAuth: [], // Security scheme to be applied globally
+      BearerAuth: [], 
     },
   ],
 };
 
-// Options for swagger-jsdoc
+
 const options = {
   swaggerDefinition,
-  apis: ['./routes/*.js', './controller/*.js'], // Paths to API documentation files
+  apis: ['./routes/*.js', './controller/*.js'], 
 };
 
-// Generate swagger specification
+
 const swaggerSpec = swaggerJsDoc(options);
 
 module.exports = {

@@ -20,7 +20,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // }))
 app.use(cors({
     origin: (origin, callback) => {
-        callback(null, true);  // Allow all origins
+        callback(null, true);  
     },
     credentials: true
 }));
