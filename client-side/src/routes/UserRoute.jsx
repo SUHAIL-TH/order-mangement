@@ -7,6 +7,7 @@ import ItemForm from '../pages/Item';
 import Fallback from '../component/Fallback/Fallback';
 import PurchaseOrder from '../pages/PurchaseOrder';
 import Order from '../pages/Order';
+import Checking from '../pages/Checking';
 function UserRoute() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,6 +27,7 @@ function UserRoute() {
         <Route path="/item" element={<ItemForm />} />
         <Route path="/purchase-order" element={<PurchaseOrder />} />
         <Route path="/orderlist" element={<Order />} />
+        <Route path="/counter" element={<Checking />} />
       </Routes>
     </Suspense>
   );
