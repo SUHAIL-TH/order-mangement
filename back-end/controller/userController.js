@@ -82,9 +82,8 @@ const addList=async(req,res)=>{
 
 const itemList=async(req,res)=>{
   try {
+
     let data=await itemScheama.find({status:1})
-
-
     res.send({message:'itemListed ',itemlist:data,status:true})
     
   } catch (error) {
