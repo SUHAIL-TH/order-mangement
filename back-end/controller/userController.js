@@ -30,7 +30,7 @@ try {
   }
   
 } catch (error) {
-    console.log(error)
+  
     res.send({message:"somthing went wrong",status:false})
 }
 }
@@ -43,7 +43,7 @@ const supplierList=async(req,res)=>{
     res.send({message:"supplier list",status:true,list:data})
     
   } catch (error) {
-    console.log(error)
+  
     res.send({message:"somthing went wrong",status:false})
   }
 }
@@ -75,7 +75,7 @@ const addList=async(req,res)=>{
     res.send({message:"Item Added",status:true})
     
   } catch (error) {
-    console.log(error)
+  
     res.send({message:"somthing went wrong",status:false})
   }
 }
@@ -87,7 +87,7 @@ const itemList=async(req,res)=>{
     res.send({message:'itemListed ',itemlist:data,status:true})
     
   } catch (error) {
-    console.log(error)
+  
     res.send({message:"somthieng went wrong ",status:false})
   }
 }
@@ -98,7 +98,7 @@ const purchaseOrder=async(req,res)=>{
     await data.save()
     res.send({message:"purchase succesfully",status:true})
   } catch (error) {
-    console.log(error)
+  
     res.send({message:"somthing went wrong ",status:false})
   }
 }
@@ -153,7 +153,7 @@ const purchaseList=async(req,res)=>{
     console.log(data)
     res.send({message:"purchase order list",status:true,list:data})
   } catch (error) {
-    console.log(error)
+  
     res.send({message:"somthing went wrong",status:false})
   }
 }
