@@ -135,8 +135,8 @@ const purchaseList=async(req,res)=>{
           total: 1,
           discount: 1,
           netAmount: 1,
-          "supplier.supplierName": 1, // Include supplier name if needed
-          "item.itemName": 1, // Include item name
+          "supplier.supplierName": 1, 
+          "item.itemName": 1, 
           "item.category":1,
           "item.brand":1,
           "item.unitPrice":1,
