@@ -52,7 +52,13 @@ const ItemForm = () => {
         status: '1',
     };
 
+
+
+
+
     const validationSchema = Yup.object({
+
+        
         itemName: Yup.string().required('Item Name is required'),
         inventoryLocation: Yup.string().required('Inventory Location is required'),
         brand: Yup.string().required('Brand is required'),
@@ -105,6 +111,7 @@ const ItemForm = () => {
                 toast.error(`Error: ${result.data.message}`);
             }
         } catch (error) {
+
             toast.error(`Error: ${error.message}`);
         }
     };
