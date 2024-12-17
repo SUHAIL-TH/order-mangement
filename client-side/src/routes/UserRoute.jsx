@@ -20,8 +20,9 @@ function UserRoute() {
   }, []);
 
   return (
-    <Suspense fallback={isLoading ? <Fallback /> : null}>
+    <Suspense fallback={isLoading ? <Fallback  /> : null}>
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/supplier" element={<Supplier />} />
         <Route path="/item" element={<ItemForm />} />
