@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AdminRoute() {
+function AdminRoute() {//no routes has writte for the admin
   return (
     <div>
       
