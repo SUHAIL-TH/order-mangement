@@ -55,12 +55,7 @@ function Naavbar() {
         >
           Orders List
         </NavLink>
-        {/* <NavLink 
-    to="/contact" 
-    className={({ isActive }) => (isActive ? 'bg-black text-white' : 'text-black')}
-  >
-    Contact
-  </NavLink> */}
+    
       </Navbar.Collapse>
     </Navbar>
 
