@@ -1,8 +1,9 @@
 import React from 'react'
-
+//this is the fallback for loading....
 function Fallback() {
   return (
     <>
+
     <div className="flex items-center justify-center h-screen " style={{backgroundColor:"black"}}>
     <div className="relative">
         <div className="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200" ></div>
