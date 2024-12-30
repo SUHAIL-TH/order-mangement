@@ -26,6 +26,7 @@ function Naavbar() {
       </div>
       <Navbar.Collapse>
         <NavLink
+        
           to="/"
           className={({ isActive }) => (isActive ? 'bg-black text-blue-800' : 'text-white')}
         >
